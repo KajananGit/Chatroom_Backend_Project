@@ -14,32 +14,32 @@ public class MessagesService {
     @Autowired
     MessageRepository messageRepository;
 
-    public Message createMessae(Message message){
-        return messageRepository.save(message);
-    }
-
-    public List<Message> getAllMessages(){
-        return messageRepository.findAll();
-    }
-
-    public Message getMessageById(long id){
-        return messageRepository.findById(id);
-    }
-
-    public Message getMessageByUserId(long userId){
-
-    }
-
-    public Message getMessageByChatroomId(long userId){
-
-    }
-
-    public Message editMessage(long id){
-
-    }
-
-    public void deleteMessage(long id){
-        messageRepository.deleteById(id);
-    }
+//    public Message createMessae(Message message){
+//        return messageRepository.save(message);
+//    }
+//
+//    public List<Message> getAllMessages(){
+//        return messageRepository.findAll();
+//    }
+//
+//    public Message getMessageById(long id){
+//        return messageRepository.findById(id).get();
+//    }
+//
+////    public Message getMessageByUserId(long userId){
+////
+////    }
+////
+////    public Message getMessageByChatroomId(long userId){
+////
+////    }
+////
+////    public Message editMessage(long id){
+////
+////    }
+//
+//    public void deleteMessage(long id){
+//        messageRepository.deleteById(id);
+//    }
 
 }

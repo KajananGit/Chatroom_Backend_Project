@@ -6,13 +6,13 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "messages")
+
+@Entity(name = "messages")
 public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @JsonIgnoreProperties({"messages"})
     @ManyToOne
@@ -24,7 +24,7 @@ public class Message {
     @JoinColumn(name = "chatroom_id")
     private Chatroom chatroom;
 
-    @Column(name = "Content")
+    @Column(name = "content")
     private String content;
 
     @Column(name = "message_date_time")
@@ -32,9 +32,9 @@ public class Message {
 
     public Message() {}
 
-    public Message(String content, LocalDateTime messageDateTime, Chatroom chatroom, User user){
+    public Message(String content, Chatroom chatroom, User user){
         this.content = content;
-        this.messageDateTime = messageDateTime;
+        this.messageDateTime = LocalDateTime.now();
         this.chatroom = chatroom;
         this.user = user;
     }

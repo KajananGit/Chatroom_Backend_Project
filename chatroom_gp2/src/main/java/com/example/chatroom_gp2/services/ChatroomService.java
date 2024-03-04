@@ -15,28 +15,28 @@ public class ChatroomService {
     ChatroomRepository chatroomRepository;
 
 
-    public Chatroom saveChatroom(Chatroom chatroom){
-        return chatroomRepository.save(chatroom);
-    }
-
-    public Chatroom getChatroomById(long id){
-        return chatroomRepository.findById(id).get();
-    }
-
-    public List<Chatroom> getAllChatrooms(){
-        return chatroomRepository.findAll();
-    }
-
-    public Chatroom updateChatroom(Chatroom chatroom){
-
-    }
-
-//    public Chatroom addChatroomToUser(long chatroomId, long userId){
-//
+//    public Chatroom saveChatroom(Chatroom chatroom){
+//        return chatroomRepository.save(chatroom);
 //    }
-
-    public void deleteChatroom(long id){
-        chatroomRepository.deleteById(id);
-    }
+//
+//    public Chatroom getChatroomById(long id){
+//        return chatroomRepository.findById(id).get();
+//    }
+//
+//    public List<Chatroom> getAllChatrooms(){
+//        return chatroomRepository.findAll();
+//    }
+//
+////    public Chatroom updateChatroom(Chatroom chatroom){
+////
+////    }
+//
+////    public Chatroom addChatroomToUser(long chatroomId, long userId){
+////
+////    }
+//
+//    public void deleteChatroom(long id){
+//        chatroomRepository.deleteById(id);
+//    }
 
 }
