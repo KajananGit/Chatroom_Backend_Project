@@ -34,5 +34,8 @@ public class ChatroomController {
         return new ResponseEntity<>(allChatrooms, HttpStatus.OK);
     }
 
+    @PatchMapping
+    
+
 
 }
