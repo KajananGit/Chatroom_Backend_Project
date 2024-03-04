@@ -1,8 +1,13 @@
 package com.example.chatroom_gp2.services;
 
 
+import com.example.chatroom_gp2.models.User;
+import com.example.chatroom_gp2.repositories.ChatroomRepository;
+import com.example.chatroom_gp2.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
