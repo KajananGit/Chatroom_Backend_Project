@@ -1,42 +1,39 @@
 package com.example.chatroom_gp2.models;
 
-
 import jakarta.persistence.*;
 import org.apache.logging.log4j.message.Message;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "chatrooms")
+public class Chatroom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id")
+    @Column(name = "id")
     private Long id;
 
-    @Column (name = "name")
+    @Column(name = "name")
     private String name;
 
-    @Column (name = "email")
-    private String email;
+    @Column(name = "capacity")
+    private int capacity;
 
-    @Column (name = "date_of_birth")
-    private LocalDate dateOfBirth;
+    @Column(name = "age_limit")
+    private int ageLimit;
 
-    @OneToMany (mappedBy = "user")
+    @OneToMany(mappedBy = "chatroom")
     private List<Message> messages;
 
-    public User(String name, String email, LocalDate dateOfBirth){
+    public Chatroom(String name, int capacity, int ageLimit){
         this.name = name;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
+        this.capacity = capacity;
+        this.ageLimit = ageLimit;
         this.messages = new ArrayList<>();
     }
-
-    public User(){}
+    public Chatroom(){}
 
     public Long getId() {
         return this.id;
@@ -54,20 +51,20 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return this.email;
+    public int getCapacity() {
+        return this.capacity;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
-    public LocalDate getDateOfBirth() {
-        return this.dateOfBirth;
+    public int getAgeLimit() {
+        return this.ageLimit;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setAgeLimit(int ageLimit) {
+        this.ageLimit = ageLimit;
     }
 
     public List<Message> getMessages() {
