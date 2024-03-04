@@ -34,12 +34,12 @@ public class MessageController {
 
 
     @PostMapping
-    public ResponseEntity<List<Message>> postMessage(@RequestBody MessageDTO messageDTO){
-        messagesService.saveMessage(messageDTO);
-        return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
+    public ResponseEntity<Message> saveMessage(@RequestBody MessageDTO messageDTO){
+        Message message = messagesService.saveMessage(messageDTO);
+        return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
 
-
+//
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Message> updateMessage(@RequestBody MessageDTO messageDTO, @PathVariable long id){
         Message updatedMessage = messagesService.updateMessage(messageDTO, id);

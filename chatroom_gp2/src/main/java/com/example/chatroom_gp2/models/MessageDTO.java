@@ -9,11 +9,11 @@ public class MessageDTO {
     private String content;
     private LocalDateTime messageDateTime;
 
-    public MessageDTO(long userId, long chatroomId, String content, LocalDateTime messageDateTime) {
+    public MessageDTO(long userId, long chatroomId, String content) {
         this.userId = userId;
         this.chatroomId = chatroomId;
         this.content = content;
-        this.messageDateTime = messageDateTime;
+        this.messageDateTime = LocalDateTime.now();
     }
 
     public MessageDTO(){}

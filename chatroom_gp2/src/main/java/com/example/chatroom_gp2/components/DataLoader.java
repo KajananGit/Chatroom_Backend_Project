@@ -1,6 +1,7 @@
 package com.example.chatroom_gp2.components;
 
 import com.example.chatroom_gp2.models.Chatroom;
+import com.example.chatroom_gp2.models.Message;
 import com.example.chatroom_gp2.models.User;
 import com.example.chatroom_gp2.repositories.ChatroomRepository;
 import com.example.chatroom_gp2.repositories.MessageRepository;
@@ -59,6 +60,16 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(user5);
 
         // MESSAGES
+        Message message1 = new Message("She always had an interesting perspective on why the world must be flat.", chatroom1, user2);
+        Message message2 = new Message("Today I dressed my unicorn in preparation for the race.", chatroom1, user3);
+        Message message3 = new Message("She was disgusted he couldn’t tell the difference between lemonade and limeade.", chatroom3, user1);
+        Message message4 = new Message("I can't believe this is the eighth time I'm smashing open my piggy bank on the same day!", chatroom1, user1);
+        Message message5 = new Message("Seek success, but always be prepared for random cats.", chatroom5, user5);
+        messageRepository.save(message1);
+        messageRepository.save(message2);
+        messageRepository.save(message3);
+        messageRepository.save(message4);
+        messageRepository.save(message5);
 
 
 

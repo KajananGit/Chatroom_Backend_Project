@@ -48,10 +48,6 @@ public class MessagesService {
 
    public Message updateMessage(MessageDTO messageDTO, long id){
         Message messageUpdate = messageRepository.findById(id).get();
-        Chatroom chatroom = chatroomService.getChatroomById(messageDTO.getChatroomId());
-        User user = userService.getUserById(messageDTO.getUserId());
-        messageUpdate.setChatroom(chatroom);
-        messageUpdate.setUser(user);
         messageUpdate.setContent(messageDTO.getContent());
         messageRepository.save(messageUpdate);
         return messageUpdate;
