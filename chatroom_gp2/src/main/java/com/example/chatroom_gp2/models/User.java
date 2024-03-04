@@ -17,13 +17,13 @@ public class User {
     @Column (name = "id")
     private Long id;
 
-    @Column (name = "Name")
+    @Column (name = "name")
     private String name;
 
-    @Column (name = "Email")
+    @Column (name = "email")
     private String email;
 
-    @Column (name = "Date Of Birth")
+    @Column (name = "date_of_birth")
     private LocalDate dateOfBirth;
 
     @OneToMany (mappedBy = "user")

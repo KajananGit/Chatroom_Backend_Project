@@ -15,13 +15,13 @@ public class Chatroom {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Capacity")
+    @Column(name = "capacity")
     private int capacity;
 
-    @Column(name = "Age Limit")
+    @Column(name = "age_limit")
     private int ageLimit;
 
     @OneToMany(mappedBy = "chatroom")
