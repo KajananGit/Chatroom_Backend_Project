@@ -41,6 +41,11 @@ public class ChatroomController {
         return new ResponseEntity<>(updatedChatroom, HttpStatus.OK);
     }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteChatroom(@PathVariable Long id) {
+        chatroomService.deleteChatroom(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
 
 
 }

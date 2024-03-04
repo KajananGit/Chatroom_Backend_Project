@@ -3,6 +3,7 @@ package com.example.chatroom_gp2.services;
 
 import com.example.chatroom_gp2.models.Chatroom;
 import com.example.chatroom_gp2.models.ChatroomDTO;
+import com.example.chatroom_gp2.models.Message;
 import com.example.chatroom_gp2.repositories.ChatroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,9 +39,14 @@ public class ChatroomService {
     }
 
 
-//
-//    public void deleteChatroom(long id){
-//        chatroomRepository.deleteById(id);
-//    }
+
+    public void deleteChatroom(long id){
+        Chatroom chatroom = chatroomRepository.findById(id).get();
+        List<Message> messages = chatroom.getMessages();
+        for (Message message : messages){
+            messages.remove(message);
+        }
+        chatroomRepository.deleteById(id);
+    }
 
 }
