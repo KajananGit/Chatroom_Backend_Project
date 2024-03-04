@@ -10,6 +10,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -44,9 +46,22 @@ public class DataLoader implements ApplicationRunner {
         chatroomRepository.save(chatroom5);
 
         // USERS
+        User user1 = new User("Harun", "Harun@gmail.com", LocalDate.of(2002, 10, 12));
+        User user2 = new User("Zakaria", "Zakaria007@outlook.com", LocalDate.of(2001, 6, 25));
+        User user3 = new User("Laura", "Laura@live.com", LocalDate.of(1995, 11, 07));
+        User user4 = new User("Maya", "Maya@gmail.com", LocalDate.of(2000, 8, 05));
+        User user5 = new User("Kajanan", "Kajanan@Hotmail.com", LocalDate.of(1999, 3, 10));
 
+        userRepository.save(user1);
+        userRepository.save(user2);
+        userRepository.save(user3);
+        userRepository.save(user4);
+        userRepository.save(user5);
 
         // MESSAGES
+        
+
+
 
     }
 
