@@ -37,7 +37,7 @@ public class DataLoader implements ApplicationRunner {
         Chatroom chatroom3 = new Chatroom("The Natterjacks", 15, 16);
         chatroomRepository.save(chatroom3);
 
-        Chatroom chatroom4 = new Chatroom("SpeakEasy", 30, 18);
+        Chatroom chatroom4 = new Chatroom("Babble Boys", 30, 18);
         chatroomRepository.save(chatroom4);
 
         Chatroom chatroom5 = new Chatroom("Film Fanatics", 25, 16);
