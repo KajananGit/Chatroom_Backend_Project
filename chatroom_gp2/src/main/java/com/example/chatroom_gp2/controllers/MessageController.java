@@ -34,9 +34,9 @@ public class MessageController {
 
 
     @PostMapping
-    public ResponseEntity<List<Message>> postMessage(@RequestBody MessageDTO messageDTO){
-        messagesService.saveMessage(messageDTO);
-        return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
+    public ResponseEntity<Message> saveMessage(@RequestBody MessageDTO messageDTO){
+        Message message = messagesService.saveMessage(messageDTO);
+        return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
 
 

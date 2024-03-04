@@ -25,10 +25,6 @@ public class UserService {
     ChatroomRepository chatroomRepository;
 
 
-//    public User saveUser(User user){
-//        return userRepository.save(user);
-//    }
-//
     public User updateUser(UserDTO userDTO, long id){
         User userUpdate = userRepository.findById(id).get();
         userUpdate.setName(userDTO.getName());
@@ -37,31 +33,22 @@ public class UserService {
         userRepository.save(userUpdate);
         return userUpdate;
     }
-//
-//
+
     public User getUserById(long id){
         return userRepository.findById(id).get();
     }
-//
+
     public List<User> getAllUsers(){
         List<User> users = userRepository.findAll();
         return users;
     }
-//
 
-////    public User addUserToChatroom(long chatroomId, long userId){
-////
-////    }
-//
-
-
-    public Long deleteUserById(long id){
+    public void deleteUserById(long id){
         User user = userRepository.findById(id).get();
         for (Message message : user.getMessages()){
             messageRepository.deleteById(message.getId());
         }
         userRepository.deleteById(id);
-        return id;
     }
 
     public User saveUser(User user){
