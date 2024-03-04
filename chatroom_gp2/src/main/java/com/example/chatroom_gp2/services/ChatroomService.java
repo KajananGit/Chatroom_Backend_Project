@@ -15,14 +15,14 @@ public class ChatroomService {
     ChatroomRepository chatroomRepository;
 
 
-//    public Chatroom saveChatroom(Chatroom chatroom){
-//        return chatroomRepository.save(chatroom);
-//    }
-//
-//    public Chatroom getChatroomById(long id){
-//        return chatroomRepository.findById(id).get();
-//    }
-//
+    public Chatroom saveChatroom(Chatroom chatroom){
+        return chatroomRepository.save(chatroom);
+    }
+
+    public Chatroom getChatroomById(long id){
+        return chatroomRepository.findById(id).get();
+    }
+
 //    public List<Chatroom> getAllChatrooms(){
 //        return chatroomRepository.findAll();
 //    }
