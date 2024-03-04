@@ -23,10 +23,10 @@ public class ChatroomService {
         return chatroomRepository.findById(id).get();
     }
 
-//    public List<Chatroom> getAllChatrooms(){
-//        return chatroomRepository.findAll();
-//    }
-//
+    public List<Chatroom> getAllChatrooms(){
+        return chatroomRepository.findAll();
+    }
+
 ////    public Chatroom updateChatroom(Chatroom chatroom){
 ////
 ////    }

@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("chatrooms")
 public class ChatroomController {
@@ -24,6 +26,12 @@ public class ChatroomController {
     public ResponseEntity<Chatroom> getChatroomById(@PathVariable long id) {
         Chatroom chatroom = chatroomService.getChatroomById(id);
         return new ResponseEntity<>(chatroom, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Chatroom>> getAllChatRooms(){
+        List<Chatroom> allChatrooms = chatroomService.getAllChatrooms();
+        return new ResponseEntity<>(allChatrooms, HttpStatus.OK);
     }
 
 
