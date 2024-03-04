@@ -1,8 +1,11 @@
 package com.example.chatroom_gp2.services;
 
 
+import com.example.chatroom_gp2.models.Message;
 import com.example.chatroom_gp2.models.User;
+import com.example.chatroom_gp2.models.UserDTO;
 import com.example.chatroom_gp2.repositories.ChatroomRepository;
+import com.example.chatroom_gp2.repositories.MessageRepository;
 import com.example.chatroom_gp2.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,9 @@ public class UserService {
     UserRepository userRepository;
 
     @Autowired
+    MessageRepository messageRepository;
+
+    @Autowired
     ChatroomRepository chatroomRepository;
 
 
@@ -23,20 +29,24 @@ public class UserService {
 //        return userRepository.save(user);
 //    }
 //
-////    public User updateUser(long id){
-////        userRepository.findById(id);
-////        return
-////    }
+    public User updateUser(UserDTO userDTO, long id){
+        User userUpdate = userRepository.findById(id).get();
+        userUpdate.setName(userDTO.getName());
+        userUpdate.setEmail(userDTO.getEmail());
+        userUpdate.setDateOfBirth(userDTO.getDateOfBirth());
+        userRepository.save(userUpdate);
+        return userUpdate;
+    }
 //
 //
-//    public User getUserById(long id){
-//        return userRepository.findById(id).get();
-//    }
+    public User getUserById(long id){
+        return userRepository.findById(id).get();
+    }
 //
-//    public List<User> getAllUsers(){
-//        List<User> users = userRepository.findAll();
-//        return users;
-//    }
+    public List<User> getAllUsers(){
+        List<User> users = userRepository.findAll();
+        return users;
+    }
 //
 
 ////    public User addUserToChatroom(long chatroomId, long userId){
@@ -45,9 +55,18 @@ public class UserService {
 //
 
 
-////    public User deleteUser(long id){
-////        return userRepository.deleteById(id);
-////    }
+    public Long deleteUserById(long id){
+        User user = userRepository.findById(id).get();
+        for (Message message : user.getMessages()){
+            messageRepository.deleteById(message.getId());
+        }
+        userRepository.deleteById(id);
+        return id;
+    }
 
+    public User createUser(UserDTO userDTO){
+        User user = new User(userDTO.getName(), userDTO.getEmail(), userDTO.getDateOfBirth());
+        return userRepository.save(user);
+    }
 
 }
