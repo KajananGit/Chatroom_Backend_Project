@@ -4,15 +4,35 @@ import java.time.LocalDateTime;
 
 public class MessageDTO {
 
+    private long userId;
+    private long chatroomId;
     private String content;
     private LocalDateTime messageDateTime;
 
-    public MessageDTO(String content, LocalDateTime messageDateTime) {
+    public MessageDTO(long userId, long chatroomId, String content, LocalDateTime messageDateTime) {
+        this.userId = userId;
+        this.chatroomId = chatroomId;
         this.content = content;
         this.messageDateTime = messageDateTime;
     }
 
     public MessageDTO(){}
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public long getChatroomId() {
+        return chatroomId;
+    }
+
+    public void setChatroomId(long chatroomId) {
+        this.chatroomId = chatroomId;
+    }
 
     public String getContent() {
         return content;

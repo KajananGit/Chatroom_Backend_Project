@@ -32,10 +32,25 @@ public class MessageController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-//    @PostMapping
-//    public ResponseEntity<Message> postMessage(@RequestBody MessageDTO messageDTO){
-//        messagesService.saveMessage(messageDTO);
-//        return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
-//    }
+
+    @PostMapping
+    public ResponseEntity<List<Message>> postMessage(@RequestBody MessageDTO messageDTO){
+        messagesService.saveMessage(messageDTO);
+        return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
+    }
+
+
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<Message> updateMessage(@RequestBody MessageDTO messageDTO, @PathVariable long id){
+        Message updatedMessage = messagesService.updateMessage(messageDTO, id);
+        return new ResponseEntity<>(updatedMessage, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteMessage(@PathVariable long id){
+        messagesService.deleteMessage(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+
 
 }
