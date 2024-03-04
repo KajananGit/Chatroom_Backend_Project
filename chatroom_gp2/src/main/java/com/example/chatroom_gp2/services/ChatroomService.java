@@ -31,9 +31,7 @@ public class ChatroomService {
 ////
 ////    }
 //
-////    public Chatroom addChatroomToUser(long chatroomId, long userId){
-////
-////    }
+
 //
 //    public void deleteChatroom(long id){
 //        chatroomRepository.deleteById(id);

@@ -38,11 +38,14 @@ public class UserService {
 //        return users;
 //    }
 //
+
 ////    public User addUserToChatroom(long chatroomId, long userId){
 ////
 ////    }
 //
-////    public User deleteById(long id){
+
+
+////    public User deleteUser(long id){
 ////        return userRepository.deleteById(id);
 ////    }
 
