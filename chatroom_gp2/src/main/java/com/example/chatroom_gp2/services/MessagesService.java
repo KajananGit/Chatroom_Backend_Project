@@ -48,8 +48,8 @@ public class MessagesService {
 //        messageRepository.deleteById(id);
 //    }
 
-   public void saveMessage(MessageDTO messageDTO){
-       Chatroom chatroom = chatroomService.findCh
-   }
+//   public void saveMessage(MessageDTO messageDTO){
+//       Chatroom chatroom = chatroomService.findCh
+//   }
 
 }

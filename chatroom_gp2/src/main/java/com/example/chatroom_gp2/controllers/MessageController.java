@@ -23,7 +23,7 @@ public class MessageController {
         return new ResponseEntity<>(messagesService.getAllMessages(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "{/id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Message> getMessageById(@PathVariable long id){
         Optional<Message> message = messagesService.findMessage(id);
         if (message.isPresent()){
@@ -32,10 +32,10 @@ public class MessageController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping
-    public ResponseEntity<Message> postMessage(@RequestBody MessageDTO messageDTO){
-        messagesService.saveMessage(messageDTO);
-        return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
-    }
+//    @PostMapping
+//    public ResponseEntity<Message> postMessage(@RequestBody MessageDTO messageDTO){
+//        messagesService.saveMessage(messageDTO);
+//        return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
+//    }
 
 }
