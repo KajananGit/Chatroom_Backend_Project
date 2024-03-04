@@ -2,6 +2,7 @@ package com.example.chatroom_gp2.services;
 
 
 import com.example.chatroom_gp2.models.Chatroom;
+import com.example.chatroom_gp2.models.ChatroomDTO;
 import com.example.chatroom_gp2.repositories.ChatroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,10 +28,15 @@ public class ChatroomService {
         return chatroomRepository.findAll();
     }
 
-////    public Chatroom updateChatroom(Chatroom chatroom){
-////
-////    }
-//
+    public Chatroom updateChatroom(Long id, ChatroomDTO chatroomDTO){
+        Chatroom chatroomToUpdate = chatroomRepository.findById(id).get();
+        chatroomToUpdate.setName(chatroomDTO.getName());
+        chatroomToUpdate.setCapacity(chatroomDTO.getCapacity());
+        chatroomToUpdate.setAgeLimit(chatroomDTO.getAgeLimit());
+        chatroomRepository.save(chatroomToUpdate);
+        return chatroomToUpdate;
+    }
+
 
 //
 //    public void deleteChatroom(long id){

@@ -1,6 +1,7 @@
 package com.example.chatroom_gp2.controllers;
 
 import com.example.chatroom_gp2.models.Chatroom;
+import com.example.chatroom_gp2.models.ChatroomDTO;
 import com.example.chatroom_gp2.services.ChatroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,11 @@ public class ChatroomController {
         return new ResponseEntity<>(allChatrooms, HttpStatus.OK);
     }
 
-    @PatchMapping
+    @PatchMapping (value = "/{id}")
+    public ResponseEntity<Chatroom> updateChatroom(@PathVariable Long id, @RequestBody ChatroomDTO chatroomDTO){
+        Chatroom updatedChatroom = chatroomService.updateChatroom(id, chatroomDTO);
+        return new ResponseEntity<>(updatedChatroom, HttpStatus.OK);
+    }
 
 
 
