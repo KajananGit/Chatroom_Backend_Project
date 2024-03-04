@@ -39,7 +39,7 @@ public class MessageController {
         return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
 
-
+//
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Message> updateMessage(@RequestBody MessageDTO messageDTO, @PathVariable long id){
         Message updatedMessage = messagesService.updateMessage(messageDTO, id);
