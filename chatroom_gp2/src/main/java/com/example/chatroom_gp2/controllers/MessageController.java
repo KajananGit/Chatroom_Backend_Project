@@ -23,7 +23,7 @@ public class MessageController {
         return new ResponseEntity<>(messagesService.getAllMessages(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "{/id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Message> getMessageById(@PathVariable long id){
         Optional<Message> message = messagesService.findMessage(id);
         if (message.isPresent()){
@@ -33,9 +33,22 @@ public class MessageController {
     }
 
     @PostMapping
-    public ResponseEntity<Message> postMessage(@RequestBody MessageDTO messageDTO){
+    public ResponseEntity<List<Message>> postMessage(@RequestBody MessageDTO messageDTO){
         messagesService.saveMessage(messageDTO);
         return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
     }
+
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<Message> updateMessage(@RequestBody MessageDTO messageDTO, @PathVariable long id){
+        Message updatedMessage = messagesService.updateMessage(messageDTO, id);
+        return new ResponseEntity<>(updatedMessage, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteMessage(@PathVariable long id){
+        messagesService.deleteMessage(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+
 
 }
