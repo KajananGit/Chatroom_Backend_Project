@@ -64,8 +64,7 @@ public class UserService {
         return id;
     }
 
-    public User createUser(UserDTO userDTO){
-        User user = new User(userDTO.getName(), userDTO.getEmail(), userDTO.getDateOfBirth());
+    public User saveUser(User user){
         return userRepository.save(user);
     }
 

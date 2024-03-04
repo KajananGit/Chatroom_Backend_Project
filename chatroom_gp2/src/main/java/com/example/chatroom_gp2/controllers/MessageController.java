@@ -32,11 +32,13 @@ public class MessageController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
+
     @PostMapping
     public ResponseEntity<List<Message>> postMessage(@RequestBody MessageDTO messageDTO){
         messagesService.saveMessage(messageDTO);
         return new ResponseEntity<>(messagesService.findAllMessages(), HttpStatus.CREATED);
     }
+
 
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Message> updateMessage(@RequestBody MessageDTO messageDTO, @PathVariable long id){

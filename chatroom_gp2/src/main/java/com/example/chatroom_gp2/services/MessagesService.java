@@ -24,10 +24,7 @@ public class MessagesService {
     @Autowired
     UserService userService;
 
-//    public Message createMessae(Message message){
-//        return messageRepository.save(message);
-//    }
-//
+
     public List<Message> getAllMessages(){
         return messageRepository.findAll();
     }
@@ -35,22 +32,7 @@ public class MessagesService {
     public Optional<Message> findMessage(long id){
         return messageRepository.findById(id);
     }
-//
-////    public Message getMessageByUserId(long userId){
-////
-////    }
-////
-////    public Message getMessageByChatroomId(long userId){
-////
-////    }
-////
-////    public Message editMessage(long id){
-////
-////    }
-//
-//    public void deleteMessage(long id){
-//        messageRepository.deleteById(id);
-//    }
+
 
    public Message saveMessage(MessageDTO messageDTO){
        Chatroom chatroom = chatroomService.getChatroomById(messageDTO.getChatroomId());
@@ -78,5 +60,6 @@ public class MessagesService {
    public void deleteMessage(long id){
       messageRepository.deleteById(id);
    }
+
 
 }
