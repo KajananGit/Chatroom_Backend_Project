@@ -2,7 +2,6 @@ package com.example.chatroom_gp2.models;
 
 
 import jakarta.persistence.*;
-import org.apache.logging.log4j.message.Message;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
