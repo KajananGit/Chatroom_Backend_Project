@@ -25,7 +25,7 @@ public class Message {
     @JoinColumn(name = "chatroom_id")
     private Chatroom chatroom;
 
-    @Column(name = "content")
+    @Column(name = "content", length = 200)
     private String content;
 
     @Column(name = "message_date_time")
