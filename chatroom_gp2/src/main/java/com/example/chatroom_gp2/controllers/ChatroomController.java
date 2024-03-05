@@ -65,4 +65,10 @@ public class ChatroomController {
         return new ResponseEntity<>(mostRecentChatroomsUsed, HttpStatus.OK);
     }
 
+    @GetMapping(path = "/mostActive")
+    public ResponseEntity<Chatroom> getMostActiveChatroom(){
+        Chatroom mostActiveChatroom = chatroomService.findMostActiveChatroom();
+        return new ResponseEntity<>(mostActiveChatroom, HttpStatus.OK);
+    }
+
 }
