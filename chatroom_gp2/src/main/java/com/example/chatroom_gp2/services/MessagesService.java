@@ -57,5 +57,18 @@ public class MessagesService {
       messageRepository.deleteById(id);
    }
 
+   public List<Message> getMessagesByChatroomId(long id){
+        return messageRepository.findByChatroomId(id);
+   }
+
+    public List<Message> getMessagesByUserId(long id){
+        return messageRepository.findByUserId(id);
+    }
+
+
+    public List<Message> getMessagesByContent(String content){
+        return messageRepository.findByContentContains(content);
+    }
+
 
 }
