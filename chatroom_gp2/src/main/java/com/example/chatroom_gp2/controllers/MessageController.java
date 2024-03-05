@@ -42,14 +42,22 @@ public class MessageController {
 //
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Message> updateMessage(@RequestBody MessageDTO messageDTO, @PathVariable long id){
-        Message updatedMessage = messagesService.updateMessage(messageDTO, id);
-        return new ResponseEntity<>(updatedMessage, HttpStatus.OK);
+        Optional<Message> message = messagesService.findMessage(id);
+        if (message.isPresent()) {
+            Message updatedMessage = messagesService.updateMessage(messageDTO, id);
+            return new ResponseEntity<>(updatedMessage, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> deleteMessage(@PathVariable long id){
-        messagesService.deleteMessage(id);
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        Optional<Message> message = messagesService.findMessage(id);
+        if (message.isPresent()) {
+            messagesService.deleteMessage(id);
+            return new ResponseEntity<>(id, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ChatroomService {
@@ -21,9 +22,11 @@ public class ChatroomService {
         return chatroomRepository.save(chatroom);
     }
 
-    public Chatroom getChatroomById(long id){
-        return chatroomRepository.findById(id).get();
+    public Optional<Chatroom> getChatroomById(long id){
+        return chatroomRepository.findById(id);
     }
+
+
 
     public List<Chatroom> getAllChatrooms(){
         return chatroomRepository.findAll();
