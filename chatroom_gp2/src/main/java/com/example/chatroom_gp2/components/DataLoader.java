@@ -65,11 +65,15 @@ public class DataLoader implements ApplicationRunner {
         Message message3 = new Message("She was disgusted he couldn’t tell the difference between lemonade and limeade.", chatroom3, user1);
         Message message4 = new Message("I can't believe this is the eighth time I'm smashing open my piggy bank on the same day!", chatroom1, user1);
         Message message5 = new Message("Seek success, but always be prepared for random cats.", chatroom5, user5);
+        Message message6 = new Message("He was the only member of the club who didn't like plum pudding.", chatroom2, user4);
+        Message message7 = new Message("It caught him off guard that the room smelled of seared steak. ", chatroom5, user2);
         messageRepository.save(message1);
         messageRepository.save(message2);
         messageRepository.save(message3);
         messageRepository.save(message4);
         messageRepository.save(message5);
+        messageRepository.save(message6);
+        messageRepository.save(message7);
 
 
 

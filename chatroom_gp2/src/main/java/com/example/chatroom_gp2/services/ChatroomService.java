@@ -52,4 +52,8 @@ public class ChatroomService {
         chatroomRepository.deleteById(id);
     }
 
+    public List<Chatroom> findChatroomByMostRecentMessage(){
+       return chatroomRepository.findChatroomByMostRecentMessage();
+    }
+
 }
