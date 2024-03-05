@@ -35,8 +35,8 @@ public class MessagesService {
 
 
    public Message saveMessage(MessageDTO messageDTO){
-       Chatroom chatroom = chatroomService.getChatroomById(messageDTO.getChatroomId());
-       User user = userService.getUserById(messageDTO.getUserId());
+       Chatroom chatroom = chatroomService.getChatroomById(messageDTO.getChatroomId()).get();
+       User user = userService.getUserById(messageDTO.getUserId()).get();
        Message message = new Message(messageDTO.getContent(), chatroom, user);
        messageRepository.save(message);
        return message;

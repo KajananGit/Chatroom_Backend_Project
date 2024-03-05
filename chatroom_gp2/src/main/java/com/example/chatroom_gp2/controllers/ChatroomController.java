@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("chatrooms")
@@ -25,8 +26,11 @@ public class ChatroomController {
 
     @GetMapping (value = "/{id}")
     public ResponseEntity<Chatroom> getChatroomById(@PathVariable long id) {
-        Chatroom chatroom = chatroomService.getChatroomById(id);
-        return new ResponseEntity<>(chatroom, HttpStatus.OK);
+        Optional<Chatroom> chatroom = chatroomService.getChatroomById(id);
+        if (chatroom.isPresent()) {
+            return new ResponseEntity<>(chatroom.get(), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping
@@ -37,14 +41,22 @@ public class ChatroomController {
 
     @PatchMapping (value = "/{id}")
     public ResponseEntity<Chatroom> updateChatroom(@PathVariable Long id, @RequestBody ChatroomDTO chatroomDTO){
-        Chatroom updatedChatroom = chatroomService.updateChatroom(id, chatroomDTO);
-        return new ResponseEntity<>(updatedChatroom, HttpStatus.OK);
+       Optional<Chatroom> chatroom = chatroomService.getChatroomById(id);
+        if (chatroom.isPresent()) {
+            Chatroom updatedChatroom = chatroomService.updateChatroom(id, chatroomDTO);
+            return new ResponseEntity<>(updatedChatroom, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> deleteChatroom(@PathVariable Long id) {
-        chatroomService.deleteChatroom(id);
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        Optional<Chatroom> chatroom = chatroomService.getChatroomById(id);
+        if (chatroom.isPresent()) {
+            chatroomService.deleteChatroom(id);
+            return new ResponseEntity<>(id, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
 
