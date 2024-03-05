@@ -59,5 +59,10 @@ public class ChatroomController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping(path = "/recent")
+    public ResponseEntity<List<Chatroom>> getMostRecentChatroomsUsed(){
+        List<Chatroom> mostRecentChatroomsUsed = chatroomService.findChatroomByMostRecentMessage();
+        return new ResponseEntity<>(mostRecentChatroomsUsed, HttpStatus.OK);
+    }
 
 }
