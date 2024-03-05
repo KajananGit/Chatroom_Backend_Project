@@ -16,7 +16,7 @@ We also added the following dependencies:
 
 ### Instructions on how to use Big Blether:
 
-
+Limited message length to 200 characters - short and punchy e.g. Twitter, Instagram. 
 
 ### Relevant Diagrams:
 
@@ -28,3 +28,7 @@ We also added the following dependencies:
 
 
 ### Extensions:
+- **Added Timestamp to messages**
+- **Created a derived query to ...**
+- ****
+- ****
