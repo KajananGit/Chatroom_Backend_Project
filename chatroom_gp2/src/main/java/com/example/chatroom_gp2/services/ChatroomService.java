@@ -56,4 +56,8 @@ public class ChatroomService {
        return chatroomRepository.findChatroomByMostRecentMessage();
     }
 
+    public Chatroom findMostActiveChatroom(){
+        return chatroomRepository.findMostActiveChatroom();
+    }
+
 }

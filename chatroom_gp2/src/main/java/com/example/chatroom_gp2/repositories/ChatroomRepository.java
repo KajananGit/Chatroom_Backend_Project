@@ -13,4 +13,6 @@ public interface ChatroomRepository extends JpaRepository<Chatroom, Long> {
     @Query ("SELECT m.chatroom FROM Message m ORDER BY m.messageDateTime DESC")
     List<Chatroom> findChatroomByMostRecentMessage();
 
+    @Query (value = "SELECT * FROM chatrooms WHERE id = (SELECT chatroom_id FROM messages GROUP BY chatroom_id ORDER BY count(*) DESC LIMIT 1)", nativeQuery = true)
+    Chatroom findMostActiveChatroom();
 }
