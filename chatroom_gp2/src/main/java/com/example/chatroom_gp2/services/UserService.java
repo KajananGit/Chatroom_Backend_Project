@@ -10,6 +10,8 @@ import com.example.chatroom_gp2.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,6 +56,17 @@ public class UserService {
 
     public User saveUser(User user){
         return userRepository.save(user);
+    }
+
+    public int calculateAge(LocalDate dateOfBirth) {
+        LocalDate currentDate = LocalDate.now();
+        if (dateOfBirth != null)
+        {
+            return Period.between(dateOfBirth, currentDate).getYears();
+        }
+        else {
+            return 0;
+        }
     }
 
 }

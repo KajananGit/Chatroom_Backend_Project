@@ -37,9 +37,15 @@ public class MessagesService {
    public Message saveMessage(MessageDTO messageDTO){
        Chatroom chatroom = chatroomService.getChatroomById(messageDTO.getChatroomId()).get();
        User user = userService.getUserById(messageDTO.getUserId()).get();
-       Message message = new Message(messageDTO.getContent(), chatroom, user);
-       messageRepository.save(message);
-       return message;
+       int userAge = userService.calculateAge(user.getDateOfBirth());
+       if(userAge >= chatroom.getAgeLimit()) {
+           Message message = new Message(messageDTO.getContent(), chatroom, user);
+           messageRepository.save(message);
+           return message;
+       } else {
+           return null;
+       }
+
    }
 
    public List<Message> findAllMessages(){

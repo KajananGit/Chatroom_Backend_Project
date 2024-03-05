@@ -36,7 +36,11 @@ public class MessageController {
     @PostMapping
     public ResponseEntity<Message> saveMessage(@RequestBody MessageDTO messageDTO){
         Message message = messagesService.saveMessage(messageDTO);
-        return new ResponseEntity<>(message, HttpStatus.CREATED);
+        if(message != null) {
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+
     }
 
 //

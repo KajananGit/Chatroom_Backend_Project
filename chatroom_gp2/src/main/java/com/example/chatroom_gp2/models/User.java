@@ -4,6 +4,7 @@ package com.example.chatroom_gp2.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,4 +77,15 @@ public class User {
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
+
+//    public int calculateAge(LocalDate dateOfBirth) {
+//        LocalDate currentDate = LocalDate.now();
+//        if (dateOfBirth != null)
+//        {
+//            return Period.between(dateOfBirth, currentDate).getYears();
+//        }
+//        else {
+//            return 0;
+//        }
+//    }
 }
