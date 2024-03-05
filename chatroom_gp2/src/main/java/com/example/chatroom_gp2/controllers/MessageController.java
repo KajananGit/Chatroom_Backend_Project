@@ -60,6 +60,24 @@ public class MessageController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping(path = "/chatroom/{id}")
+    public ResponseEntity<List<Message>> getMessagesByChatroomId(@PathVariable long id){
+        List<Message> allMessagesById = messagesService.getMessagesByChatroomId(id);
+        return new ResponseEntity<>(allMessagesById, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/user/{id}")
+    public ResponseEntity<List<Message>> getMessagesByUserId(@PathVariable long id){
+        List<Message> allMessagesById = messagesService.getMessagesByUserId(id);
+        return new ResponseEntity<>(allMessagesById, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/content/{text}")
+    public ResponseEntity<List<Message>> getMessagesByContent(@PathVariable String text){
+        List<Message> allMessagesByContent = messagesService.getMessagesByContent(text);
+        return new ResponseEntity<>(allMessagesByContent, HttpStatus.OK);
+    }
+
 
 
 }
