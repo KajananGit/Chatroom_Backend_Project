@@ -32,13 +32,13 @@ Limited Message property content (String) length to 200 characters - to enable s
 - **GET the most active chatroom *(defined as most messages sent within it)***: localhost:8080/chatrooms/mostActive
 - **PATCH a chatroom by id:** localhost:8080/chatrooms/{id}
 - **DELETE a chatroom by id:** localhost:8080/chatrooms/{id}
-*For User:*
+<br>*For User:*
 - **POST a user:** localhost:8080/users
 - **GET a list of all users:** localhost:8080/users
 - **GET an individual user by id:** localhost:8080/users/{id}
 - **PATCH a user by id:** localhost:8080/users/{id}
 - **DELETE a user by id:** localhost:8080/users/{id}
-*For Message:*
+<br>*For Message:*
 - **POST a message:** localhost:8080/messages
 - **GET a list of all messages:** localhost:8080/messages
 - **GET a message by it's id:** localhost:8080/messages/{id}
