@@ -32,12 +32,15 @@ Limited Message property content (String) length to 200 characters - to enable s
 - **GET the most active chatroom *(defined as most messages sent within it)***: localhost:8080/chatrooms/mostActive
 - **PATCH a chatroom by id:** localhost:8080/chatrooms/{id}
 - **DELETE a chatroom by id:** localhost:8080/chatrooms/{id}
+<p>
 <br>*For User:*
 - **POST a user:** localhost:8080/users
 - **GET a list of all users:** localhost:8080/users
 - **GET an individual user by id:** localhost:8080/users/{id}
 - **PATCH a user by id:** localhost:8080/users/{id}
 - **DELETE a user by id:** localhost:8080/users/{id}
+</p>
+<p>
 <br>*For Message:*
 - **POST a message:** localhost:8080/messages
 - **GET a list of all messages:** localhost:8080/messages
@@ -47,6 +50,7 @@ Limited Message property content (String) length to 200 characters - to enable s
 - **GET a list of messages posted in a specific chatroom:** localhost:8080/messages/chatroom/{id}
 - **PATCH a specific message using it's id:** localhost:8080/messages/{id}
 - **DELETE a specific message using it's id:** localhost:8080/messages/{id}
+</p>
 
 ### MVP Functionality:
 - Create a user. 
