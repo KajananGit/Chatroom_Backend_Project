@@ -24,18 +24,36 @@ Limited Message property content (String) length to 200 characters - to enable s
 - Entity Relationship Diagram: INSERT GITHUB LINK
 
 ### Available Routes:
-- **Spring Web**
-- **Spring Boot DevTools**
-- **PostgreSQL Driver**
-- **Spring Data JPA**
+*For Chatroom:*
+- **POST a chatroom:** localhost:8080/chatrooms 
+- **GET a chatroom:** localhost:8080/chatrooms
+- **GET a chatroom by id:*** localhost:8080/chatrooms/{id}
+- **GET a list of chatrooms ordered by how recently they were used:** localhost:8080/chatrooms/recent
+- **GET the most active chatroom *(defined as most messages sent within it)***: localhost:8080/chatrooms/mostActive
+- **PATCH a chatroom by id:** localhost:8080/chatrooms/{id}
+- **DELETE a chatroom by id:** localhost:8080/chatrooms/{id}
+*For User:*
+- **POST a user:** localhost:8080/users
+- **GET a list of all users:** localhost:8080/users
+- **GET an individual user by id:** localhost:8080/users/{id}
+- **PATCH a user by id:** localhost:8080/users/{id}
+- **DELETE a user by id:** localhost:8080/users/{id}
+*For Message:*
+- **POST a message:** localhost:8080/messages
+- **GET a list of all messages:** localhost:8080/messages
+- **GET a message by it's id:** localhost:8080/messages/{id}
+- **GET a message that contains a specific text:** localhost:8080/messages/content/{text}
+- **GET a list of messages send by a specific user:** localhost:8080/messages/user/{id}
+- **GET a list of messages posted in a specific chatroom:** localhost:8080/messages/chatroom/{id}
+- **PATCH a specific message using it's id:** localhost:8080/messages/{id}
+- **DELETE a specific message using it's id:** localhost:8080/messages/{id}
 
 ### MVP Functionality:
-- Create a User. 
-- Create a Chatroom. 
-- 
-- 
-
-
+- Create a user. 
+- Update user infomation. 
+- Delete a user. 
+- Allow a user to post a message in a chatroom.
+- Allow users to read messages sent by other uses in a chatroom. 
 
 ### Extension Funtionality:
 - Added **Timestamp to messages.**
@@ -43,6 +61,6 @@ Limited Message property content (String) length to 200 characters - to enable s
 - Created a **derived query to find a specific user by their id.**
 - Created a **derived query to find all messages that contain a specific text.**
 - Created a **custom query to display chatrooms by how recently messages were sent within them, ordered from most to least recent.**
-- Created a **native query to find the most active chatroom (i.e. the chatroom witht he most messages sent overall).**
+- Created a **native query to find the most active chatroom (i.e. the chatroom with the most messages sent overall).**
 - Added **age restriction functionality** by creating and implementing a method to check a user's age and compare it to the age limit of the chatroom, prior to them being able to post a message (and therefore to see a chatroom's content) in a chatroom.
 - **????Reactions**
