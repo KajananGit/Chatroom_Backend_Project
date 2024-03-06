@@ -38,11 +38,11 @@ Limited Message property content (String) length to 200 characters - to enable s
 
 
 ### Extension Funtionality:
-- **Added Timestamp to messages.**
-- **Created a derived query to find a specifc chatroom by its id.**
-- **Created a derived query to find a specific user by their id.**
-- **Created a derived query to find all messages that contain a specific text.**
-- **Created a custom query to display chatrooms by how recently messages were sent within them, ordered from most to least recent.**
-- **Created a native query to find the most active chatroom (i.e. the chatroom witht he most messages sent overall).**
-- **Added age restriction functionality by creating and implementing a method to check a user's age and compare it to the age limit of the chatroom, prior to them being able to post a message (and therefore to see a chatroom's content) in a chatroom.**
+- Added **Timestamp to messages.**
+- Created a **derived query to find a specifc chatroom by its id.**
+- Created a **derived query to find a specific user by their id.**
+- Created a **derived query to find all messages that contain a specific text.**
+- Created a **custom query to display chatrooms by how recently messages were sent within them, ordered from most to least recent.**
+- Created a **native query to find the most active chatroom (i.e. the chatroom witht he most messages sent overall).**
+- Added **age restriction functionality** by creating and implementing a method to check a user's age and compare it to the age limit of the chatroom, prior to them being able to post a message (and therefore to see a chatroom's content) in a chatroom.
 - **????Reactions**
