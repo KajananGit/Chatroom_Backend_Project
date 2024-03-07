@@ -40,42 +40,7 @@ Example payload:
 
 ** Remember to uphold the many-to-many relationships by assigning many users to many chatrooms and many chatrooms to many users.**
 
-6) Full CRUD functionality has been added to each of the tables along with the additional requests detailed below:
-
-Chatroom:
-@GET - get a single chatroom by id
-@GET - get a list of all chatrooms
-@GET - get a list  of the most recently used chatrooms  in order (“/recent”)
-@GET - get the most active chatroom (“/mostActive”)
-
-@POST - post and save a new chatroom
-
-@PATCH - update a chatroom the the id
-
-@DELETE - delete a chatroom by the id
-
-User:
-@GET - get a single user by id
-@GET -  get a list of all users
-
-@POST - create a new user
-
-@PATCH - update a user by the id
-
-@DELETE - delete a user by the id
-
-Message:
-@GET - get a single message by id
-@GET - get a list of all messages
-@GET - get messages by chatroom id (“/chatroom/{id}”)
-@GET - get messages by user id (“/user/{id}”)
-@GET - get messages by content (“/content/{text}”)
-
-@POST - post and save a message
-
-@PATCH - update a message by the id
-
-@DELETE - delete a message by the id
+6) Full CRUD functionality has been added to each of the tables along with the additional routes detailed below.
 
 7)  Users that are under the age limit of the chatroom should not be able to see or react to a message in that chatroom. We have created a method that calculates a user’s age from their date of birth to be determine if a message can be posted.
 
