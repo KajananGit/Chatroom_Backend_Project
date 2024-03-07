@@ -58,7 +58,7 @@ Example payload:
 
 7)  Users that are under the age limit of the chatroom should not be able to see a message in that chatroom. We have created a method that calculates a user’s age from their date of birth to be determine if a message can be posted.
 
-On the front end, a feature that blurs messages in a chatroom for users that are below the age limit will be applied.
+    On the front end, a feature that blurs messages in a chatroom for users that are below the age limit will be applied.
 
 
 ### Relevant Diagrams:
