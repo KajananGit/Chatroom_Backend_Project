@@ -15,8 +15,72 @@ We also added the following dependencies:
 
 
 ### Instructions on how to use Big Blether:
+1) Create a database named chatroom_gp2 in the terminal using the createdb command.
 
-Limited Message property content (String) length to 200 characters - to enable short and punchy messages *e.g. as used in X (formerly Twitter), Instagram, etc.* 
+2) Add the name of the database to application.properties and you should be able to see three tables names chatrooms, messages and users in Postico.
+
+3) Use an @POST method to populate the users table by creating users in postman with the properties name, email and date of birth to add to the database.
+
+Example payload:
+{
+    "name" : "Mr Chatter Box",
+    "email" : "mrchatterbox@outlook.com",
+    "dateOfBirth" : "1980-03-06"
+}
+
+4) Use an @POST method to populate the chatrooms table with the properties name, capacity and ageLimit.
+
+Example payload:
+// add example payload
+
+5) Use an @POST method to populate the messages table with the properties content, chatroom and user. We have chosen to limit content length to 200 characters to keep messages short and punchy   e.g. Twitter, Instagram, etc.
+
+Example payload:
+// add example payload
+
+** Remember to uphold the many-to-many relationships by assigning many users to many chatrooms and many chatrooms to many users.**
+
+6) Full CRUD functionality has been added to each of the tables along with the additional requests detailed below:
+
+Chatroom:
+@GET - get a single chatroom by id
+@GET - get a list of all chatrooms
+@GET - get a list  of the most recently used chatrooms  in order (“/recent”)
+@GET - get the most active chatroom (“/mostActive”)
+
+@POST - post and save a new chatroom
+
+@PATCH - update a chatroom the the id
+
+@DELETE - delete a chatroom by the id
+
+User:
+@GET - get a single user by id
+@GET -  get a list of all users
+
+@POST - create a new user
+
+@PATCH - update a user by the id
+
+@DELETE - delete a user by the id
+
+Message:
+@GET - get a single message by id
+@GET - get a list of all messages
+@GET - get messages by chatroom id (“/chatroom/{id}”)
+@GET - get messages by user id (“/user/{id}”)
+@GET - get messages by content (“/content/{text}”)
+
+@POST - post and save a message
+
+@PATCH - update a message by the id
+
+@DELETE - delete a message by the id
+
+7)  Users that are under the age limit of the chatroom should not be able to see or react to a message in that chatroom. We have created a method that calculates a user’s age from their date of birth to be determine if a message can be posted.
+
+On the front end, a feature that blurs messages in a chatroom for users that are below the age limit will be applied.
+
 
 ### Relevant Diagrams:
 - Class Diagram of MVP: INSERT GITHUB LINK
