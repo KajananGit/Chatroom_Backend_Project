@@ -1,6 +1,6 @@
 # CHATROOM API PROJECT - 'Big Blether' 👩🏽‍💻💬👨🏾‍💻
 
-![Alt text](https://lovely32.com/cdn/shop/products/image_9ff117ab-9e03-4b00-b486-59cb602b6001_1200x1200.jpg?v=1669466173 "Big Blether Logo")
+![Alt text](https://p1.hiclipart.com/preview/796/688/961/background-meeting-discussion-group-conversation-internet-forum-communication-text-orange-line-png-clipart.jpg "Big Blether Logo")
 
 ## Project Aims:
 To create a functioning chatroom API onto to which a front-end can be seamlessly implemented. The primary intention was to facilitate chatrooms containing multiple users, rather than direct messages between two users *i.e. more akin to Reddit than Facebook Messenger.* In this project, we wanted to provide all users with the capability of creating a chatroom, whilst ensuring a space was reserved for more mature topics and content, hence we facilitated implementation of age restriction into indivudal chatrooms, where required. 
@@ -57,8 +57,7 @@ Example payload:
 6) Full CRUD functionality has been added to each of the tables along with the additional routes detailed below.
 
 7)  Users that are under the age limit of the chatroom should not be able to see a message in that chatroom. We have created a method that calculates a user’s age from their date of birth to be determine if a message can be posted.
-
-    On the front end, a feature that blurs messages in a chatroom for users that are below the age limit will be applied.
+    --> **On the front end, a feature will need to be created that blurs messages in a chatroom for users that are below the age limit (so they cannot read messages in the chatroom prior to posting a message).**
 
 
 ### Relevant Diagrams:
@@ -109,4 +108,3 @@ Example payload:
 - Created a **custom query to display chatrooms by how recently messages were sent within them, ordered from most to least recent.**
 - Created a **native query to find the most active chatroom (i.e. the chatroom with the most messages sent overall).**
 - Added **age restriction functionality** by creating and implementing a method to check a user's age and compare it to the age limit of the chatroom, prior to them being able to post a message (and therefore to see a chatroom's content) in a chatroom.
-- **????Reactions**
