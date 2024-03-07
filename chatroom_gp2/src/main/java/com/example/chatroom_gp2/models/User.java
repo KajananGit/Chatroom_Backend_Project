@@ -78,14 +78,5 @@ public class User {
         this.messages = messages;
     }
 
-//    public int calculateAge(LocalDate dateOfBirth) {
-//        LocalDate currentDate = LocalDate.now();
-//        if (dateOfBirth != null)
-//        {
-//            return Period.between(dateOfBirth, currentDate).getYears();
-//        }
-//        else {
-//            return 0;
-//        }
-//    }
+
 }

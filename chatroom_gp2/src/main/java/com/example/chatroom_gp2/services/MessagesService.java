@@ -14,7 +14,6 @@ import java.util.Optional;
 
 @Service
 public class MessagesService {
-
     @Autowired
     MessageRepository messageRepository;
 
@@ -24,7 +23,6 @@ public class MessagesService {
     @Autowired
     UserService userService;
 
-
     public List<Message> getAllMessages(){
         return messageRepository.findAll();
     }
@@ -33,7 +31,6 @@ public class MessagesService {
         return messageRepository.findById(id);
     }
 
-//
    public Message saveMessage(MessageDTO messageDTO){
        Chatroom chatroom = chatroomService.getChatroomById(messageDTO.getChatroomId()).get();
        User user = userService.getUserById(messageDTO.getUserId()).get();
@@ -45,7 +42,6 @@ public class MessagesService {
        } else {
            return null;
        }
-
    }
 
    public List<Message> findAllMessages(){
@@ -71,10 +67,8 @@ public class MessagesService {
         return messageRepository.findByUserId(id);
     }
 
-
     public List<Message> getMessagesByContent(String content){
         return messageRepository.findByContentContains(content);
     }
-
 
 }

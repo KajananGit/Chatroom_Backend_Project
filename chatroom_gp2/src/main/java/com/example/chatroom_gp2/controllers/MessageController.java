@@ -32,7 +32,6 @@ public class MessageController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-
     @PostMapping
     public ResponseEntity<Message> saveMessage(@RequestBody MessageDTO messageDTO){
         Message message = messagesService.saveMessage(messageDTO);
@@ -43,7 +42,6 @@ public class MessageController {
 
     }
 
-//
     @PatchMapping(value = "/{id}")
     public ResponseEntity<Message> updateMessage(@RequestBody MessageDTO messageDTO, @PathVariable long id){
         Optional<Message> message = messagesService.findMessage(id);

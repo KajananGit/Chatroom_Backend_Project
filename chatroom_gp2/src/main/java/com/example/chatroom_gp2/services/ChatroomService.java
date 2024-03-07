@@ -17,7 +17,6 @@ public class ChatroomService {
     @Autowired
     ChatroomRepository chatroomRepository;
 
-
     public Chatroom saveChatroom(Chatroom chatroom){
         return chatroomRepository.save(chatroom);
     }
@@ -25,8 +24,6 @@ public class ChatroomService {
     public Optional<Chatroom> getChatroomById(long id){
         return chatroomRepository.findById(id);
     }
-
-
 
     public List<Chatroom> getAllChatrooms(){
         return chatroomRepository.findAll();
@@ -40,8 +37,6 @@ public class ChatroomService {
         chatroomRepository.save(chatroomToUpdate);
         return chatroomToUpdate;
     }
-
-
 
     public void deleteChatroom(long id){
         Chatroom chatroom = chatroomRepository.findById(id).get();

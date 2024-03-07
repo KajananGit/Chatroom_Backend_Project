@@ -17,7 +17,6 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-
     @Autowired
     UserRepository userRepository;
 
@@ -26,7 +25,6 @@ public class UserService {
 
     @Autowired
     ChatroomRepository chatroomRepository;
-
 
     public User updateUser(UserDTO userDTO, long id){
         User userUpdate = userRepository.findById(id).get();
@@ -68,5 +66,4 @@ public class UserService {
             return 0;
         }
     }
-
 }
