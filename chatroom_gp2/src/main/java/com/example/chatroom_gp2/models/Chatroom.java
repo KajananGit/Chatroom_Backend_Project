@@ -1,5 +1,6 @@
 package com.example.chatroom_gp2.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 
@@ -24,6 +25,7 @@ public class Chatroom {
     @Column(name = "age_limit")
     private int ageLimit;
 
+    @JsonIgnoreProperties("chatroom")
     @OneToMany(mappedBy = "chatroom")
     private List<Message> messages;
 

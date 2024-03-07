@@ -1,6 +1,7 @@
 package com.example.chatroom_gp2.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -26,6 +27,7 @@ public class User {
     @Column (name = "date_of_birth")
     private LocalDate dateOfBirth;
 
+    @JsonIgnoreProperties("user")
     @OneToMany (mappedBy = "user")
     private List<Message> messages;
 
