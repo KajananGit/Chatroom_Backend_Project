@@ -61,9 +61,9 @@ Example payload:
 
 
 ### Relevant Diagrams:
-- Class Diagram of MVP: INSERT GITHUB LINK
-- Class Diagram of MVP + Extensions *(in blue)*: INSERT GITHUB LINK
-- Entity Relationship Diagram: INSERT GITHUB LINK
+- Class Diagram of MVP: https://github.com/KajananGit/Chatroom_Backend_Project/blob/main/ClassDiagram.png
+- Class Diagram of MVP + Extensions *(in blue)*: https://github.com/KajananGit/Chatroom_Backend_Project/blob/main/Class%20Diagram%20including%20Extensions.png
+- Entity Relationship Diagram: https://github.com/KajananGit/Chatroom_Backend_Project/blob/main/ERD_MVP.png
 
 ### Available Routes:
 *For Chatroom:*
