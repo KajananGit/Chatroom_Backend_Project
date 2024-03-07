@@ -22,35 +22,41 @@ We also added the following dependencies:
 3) Use an @POST method to populate the users table by creating users in postman with the properties name, email and dateOfBirth to add to the database.
 
 Example payload:
+```JSON
 {
     "name" : "Mr Chatter Box",
     "email" : "mrchatterbox@outlook.com",
     "dateOfBirth" : "1980-03-06"
 }
+```
 
 4) Use an @POST method to populate the chatrooms table with the properties name, capacity and ageLimit.
 
 Example payload:
+``` JSON
 {
     "name": "Crazy Chats",
     "capacity": 200,
     "ageLimit": 18
 }
+```
 
 5) Use an @POST method to populate the messages table with the properties content, chatroomId and userId. We have chosen to limit content length to 200 characters to keep messages short and punchy   e.g. Twitter, Instagram, etc.
 
 Example payload:
+``` JSON
 {
     "chatroomId" : 4,
     "userId" : 3,
     "content" : "Imagine his surprise when he discovered that the safe was full of pudding."
 }
+```
 
 ** Remember to uphold the many-to-many relationships by assigning many users to many chatrooms and many chatrooms to many users.**
 
 6) Full CRUD functionality has been added to each of the tables along with the additional routes detailed below.
 
-7)  Users that are under the age limit of the chatroom should not be able to see or react to a message in that chatroom. We have created a method that calculates a user’s age from their date of birth to be determine if a message can be posted.
+7)  Users that are under the age limit of the chatroom should not be able to see a message in that chatroom. We have created a method that calculates a user’s age from their date of birth to be determine if a message can be posted.
 
 On the front end, a feature that blurs messages in a chatroom for users that are below the age limit will be applied.
 
