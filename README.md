@@ -19,24 +19,32 @@ We also added the following dependencies:
 
 2) Add the name of the database to application.properties and you should be able to see three tables names chatrooms, messages and users in Postico.
 
-3) Use an @POST method to populate the users table by creating users in postman with the properties name, email and date of birth to add to the database.
+3) Use an @POST method to populate the users table by creating users in postman with the properties name, email and dateOfBirth to add to the database.
 
 Example payload:
 {
-    "name" : "Mr Chatter Box",
-    "email" : "mrchatterbox@outlook.com",
-    "dateOfBirth" : "1980-03-06"
+    "name" : "Mr Chatter Box",
+    "email" : "mrchatterbox@outlook.com",
+    "dateOfBirth" : "1980-03-06"
 }
 
 4) Use an @POST method to populate the chatrooms table with the properties name, capacity and ageLimit.
 
 Example payload:
-// add example payload
+{
+    "name": "Crazy Chats",
+    "capacity": 200,
+    "ageLimit": 18
+}
 
-5) Use an @POST method to populate the messages table with the properties content, chatroom and user. We have chosen to limit content length to 200 characters to keep messages short and punchy   e.g. Twitter, Instagram, etc.
+5) Use an @POST method to populate the messages table with the properties content, chatroomId and userId. We have chosen to limit content length to 200 characters to keep messages short and punchy   e.g. Twitter, Instagram, etc.
 
 Example payload:
-// add example payload
+{
+    "chatroomId" : 4,
+    "userId" : 3,
+    "content" : "Imagine his surprise when he discovered that the safe was full of pudding."
+}
 
 ** Remember to uphold the many-to-many relationships by assigning many users to many chatrooms and many chatrooms to many users.**
 
