@@ -67,7 +67,7 @@ Example payload:
 
 ### Available Routes:
 *For Chatroom:*
-- **POST a chatroom:** localhost:8080/chatrooms 
+- **POST a chatroom:** localhost:8080/chatrooms ^^@FRONTEND TEAM: messages returns null so users cannot see messages until they have posted in a chatroom and their age has been verified. A @GetMapping will be required if wanting to return an array of messages.
 - **GET a chatroom:** localhost:8080/chatrooms
 - **GET a chatroom by id:*** localhost:8080/chatrooms/{id}
 - **GET a list of chatrooms ordered by how recently they were used:** localhost:8080/chatrooms/recent
@@ -76,7 +76,7 @@ Example payload:
 - **DELETE a chatroom by id:** localhost:8080/chatrooms/{id}
 
 *For User:*
-- **POST a user:** localhost:8080/users
+- **POST a user:** localhost:8080/users ^^@FRONTEND TEAM: messages returns null so users cannot see messages until they have posted in a chatroom and their age has been verified. A @GetMapping will be required if wanting to return an array of messages.
 - **GET a list of all users:** localhost:8080/users
 - **GET an individual user by id:** localhost:8080/users/{id}
 - **PATCH a user by id:** localhost:8080/users/{id}
